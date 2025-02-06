@@ -1,41 +1,84 @@
 <template>
-    <div>
+    <div :style="styles.container">
       <h2>Extrato de Transferências</h2>
-      <ul>
-        <li v-for="transferencia in transferencias" :key="transferencia.id">
-          {{ transferencia.contaOrigem }} -> {{ transferencia.contaDestino }}: R$ {{ transferencia.valor }} (Taxa: R$ {{ transferencia.taxa }})
-        </li>
-      </ul>
+      <div class="table-responsive">
+        <table :style="styles.table">
+          <thead :style="styles.tableHeader">
+            <tr>
+              <th>ID</th>
+              <th>Conta Origem</th>
+              <th>Conta Destino</th>
+              <th>Valor</th>
+              <th>Taxa</th>
+              <th>Valor Total</th>
+              <th>Data de Transferência</th>
+              <th>Data de Agendamento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="transferencia in transferencias" :key="transferencia.id" :style="styles.tableRow">
+              <td>{{ transferencia.id }}</td>
+              <td>{{ transferencia.contaOrigem }}</td>
+              <td>{{ transferencia.contaDestino }}</td>
+              <td>R$ {{ transferencia.valor.toFixed(2) }}</td>
+              <td>R$ {{ transferencia.taxa.toFixed(2) }}</td>
+              <td>R$ {{ (transferencia.valor + transferencia.taxa).toFixed(2) }}</td>
+              <td>{{ formatarData(transferencia.dataTransferencia) }}</td>
+              <td>{{ formatarData(transferencia.dataAgendamento) }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </template>
   
   <script>
+  import { ref, onMounted } from 'vue';
   import api from '../services/api';
+  import { styles } from '../assets/styles';
   
   export default {
-    data() {
-      return {
-        transferencias: []
-      };
-    },
-    async created() {
-      await this.carregarTransferencias();
-    },
-    methods: {
-      async carregarTransferencias() {
+    setup() {
+      const transferencias = ref([]);
+  
+      const carregarTransferencias = async () => {
         const response = await api.get('/transferencias');
-        this.transferencias = response.data;
-      }
+        transferencias.value = response.data;
+      };
+  
+      const formatarData = (data) => {
+        const dataLocal = new Date(data);
+        dataLocal.setMinutes(dataLocal.getMinutes() + dataLocal.getTimezoneOffset());
+        return dataLocal.toLocaleDateString('pt-BR');
+      };
+  
+      onMounted(() => {
+        carregarTransferencias();
+      });
+  
+      return {
+        transferencias,
+        formatarData,
+        carregarTransferencias,
+        styles
+      };
     }
   };
   </script>
   
   <style scoped>
-  ul {
-    list-style-type: none;
-    padding: 0;
+  .table-responsive {
+    overflow-x: auto;
   }
-  li {
-    margin: 10px 0;
+  
+  th, td {
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  @media (max-width: 768px) {
+    th, td {
+      font-size: 0.875rem;
+    }
   }
   </style>
