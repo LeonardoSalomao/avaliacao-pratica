@@ -39,14 +39,19 @@ Este projeto foi desenvolvido como parte de um desafio técnico para a empresa *
 
 1. **Clone o repositório:**
    git clone https://github.com/LeonardoSalomao/avaliacao-pratica.git
+
    cd avaliacao-pratica/backend
 
 2. **Compile e execute o projeto:**
+
    mvn install
+
    mvn spring-boot:run
 
 3. **Acesse a API:**
+
    Acesse em http://localhost:8080.
+
    Acesse o Swagger em http://localhost:8080/swagger-ui.html.
 
 ---
@@ -54,15 +59,19 @@ Este projeto foi desenvolvido como parte de um desafio técnico para a empresa *
 ### **2. Front-end (Vue.js)**
 
 1. **Navegue até a pasta do front-end:**
+
    cd ../frontend
 
 2. **Instale as dependências:**
+
    npm install
 
 3. **Execute o servidor de desenvolvimento:**
+
    npm run serve
 
 4. **Acesse o front-end:**
+
    Acesse o front-end em http://localhost:8081.
 
 ---
@@ -70,6 +79,7 @@ Este projeto foi desenvolvido como parte de um desafio técnico para a empresa *
 ## **Funcionalidades**
 
 1. **Agendar Transferência**
+
    O usuário pode agendar uma transferência inserindo:
 
    - Conta de origem (10 dígitos).
@@ -78,6 +88,7 @@ Este projeto foi desenvolvido como parte de um desafio técnico para a empresa *
    - Data de transferência.
 
 2. **Listar Transferências**
+
    Todas as transferências agendadas são exibidas em uma tabela, com os seguintes dados:
 
    - ID.
@@ -90,6 +101,7 @@ Este projeto foi desenvolvido como parte de um desafio técnico para a empresa *
    - Data de agendamento.
 
 3. **Cálculo de Taxas**
+
    A taxa é calculada com base na data de transferência:
 
    - 0 dias: 2,5% + R$ 3,00.
