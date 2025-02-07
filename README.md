@@ -75,7 +75,7 @@ Este projeto foi desenvolvido como parte de um desafio técnico para a empresa *
    - Conta de origem (10 dígitos).
    - Conta de destino (10 dígitos).
    - Valor da transferência (com até duas casas decimais).
-   - Data de transferência (não pode ser no passado).
+   - Data de transferência.
 
 2. **Listar Transferências**
    Todas as transferências agendadas são exibidas em uma tabela, com os seguintes dados:
