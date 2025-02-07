@@ -19,15 +19,11 @@ public class SwaggerConfig {
                         .title("API de Agendamento de Transferências Financeiras")
                         .version("1.0.0")
                         .description("API para agendamento de transferências financeiras com cálculo de taxas.")
-                        .contact(new Contact()
-                                .name("Suporte")
-                                .email("suporte@empresa.com"))
                         .license(new License()
                                 .name("Apache 2.0")
                                 .url("https://www.apache.org/licenses/LICENSE-2.0")))
                 .servers(List.of(
-                        new Server().url("http://localhost:8080").description("Servidor local"),
-                        new Server().url("https://api.empresa.com").description("Servidor de produção")
+                        new Server().url("http://localhost:8080").description("Servidor local")
                 ));
     }
 }

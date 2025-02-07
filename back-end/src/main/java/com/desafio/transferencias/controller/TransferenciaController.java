@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/transferencias")
 @CrossOrigin(origins = "http://localhost:8081")
-@Tag(name = "Transferências", description = "Operações relacionadas ao agendamento de transferências financeiras")
+@Tag(name = "Transferências", description = "Controller do agendamento de transferências financeiras")
 public class TransferenciaController {
 
     private final TransferenciaService service;
@@ -22,7 +22,7 @@ public class TransferenciaController {
     }
 
     @PostMapping
-    @Operation(summary = "Agendar uma transferência", description = "Agenda uma nova transferência financeira.")
+    @Operation(summary = "Agendar uma transferência")
     @ApiResponse(responseCode = "200", description = "Transferência agendada com sucesso")
     @ApiResponse(responseCode = "400", description = "Dados inválidos")
     public Transferencia agendarTransferencia(@RequestBody Transferencia transferencia) {
@@ -30,7 +30,7 @@ public class TransferenciaController {
     }
 
     @GetMapping
-    @Operation(summary = "Listar transferências", description = "Retorna a lista de todas as transferências agendadas.")
+    @Operation(summary = "Listar transferências")
     @ApiResponse(responseCode = "200", description = "Lista de transferências retornada com sucesso")
     public List<Transferencia> listarTransferencias() {
         return service.listarTransferencias();

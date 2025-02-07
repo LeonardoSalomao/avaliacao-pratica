@@ -6,14 +6,14 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-import TransferenciaForm from './components/TransferenciaForm.vue';
-import TransferenciaList from './components/TransferenciaList.vue';
+import { ref } from "vue";
+import TransferenciaForm from "./components/TransferenciaForm.vue";
+import TransferenciaList from "./components/TransferenciaList.vue";
 
 export default {
   components: {
     TransferenciaForm,
-    TransferenciaList
+    TransferenciaList,
   },
   setup() {
     const lista = ref(null);
@@ -26,9 +26,9 @@ export default {
 
     return {
       lista,
-      atualizarLista
+      atualizarLista,
     };
-  }
+  },
 };
 </script>
 
