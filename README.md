@@ -29,7 +29,7 @@ Este projeto foi desenvolvido como parte de um desafio técnico para a empresa *
 ### **Pré-requisitos**
 
 1. **Java 11**
-2. **Node.js**
+2. **Node.js** (versão 14.x ou superior)
 3. **Maven**
 4. **Vue CLI**
 
