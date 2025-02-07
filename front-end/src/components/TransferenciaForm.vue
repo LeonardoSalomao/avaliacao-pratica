@@ -63,13 +63,11 @@
         </button>
       </form>
   
-      <!-- Mensagem de Sucesso -->
       <div v-if="sucesso" :style="{ ...styles.alert, ...styles.alertSuccess }">
         <font-awesome-icon icon="check-circle" />
         {{ sucesso }}
       </div>
   
-      <!-- Mensagem de Erro -->
       <div v-if="erro" :style="{ ...styles.alert, ...styles.alertError }">
         <font-awesome-icon icon="exclamation-circle" />
         {{ erro }}
@@ -142,6 +140,10 @@
       const validarDataTransferencia = () => {
         const dataAtual = new Date();
         const dataTransferencia = new Date(transferencia.value.dataTransferencia);
+
+        dataAtual.setHours(0, 0, 0, 0);
+        dataTransferencia.setHours(0, 0, 0, 0);
+  
         if (!transferencia.value.dataTransferencia) {
           erros.value.dataTransferencia = 'A data de transferência é obrigatória.';
         } else if (dataTransferencia < dataAtual) {
@@ -197,7 +199,7 @@
   }
   
   input {
-    width: 100%;
+    width: 50%;
     padding: 0.5rem;
     border: 1px solid #ccc;
     border-radius: 4px;

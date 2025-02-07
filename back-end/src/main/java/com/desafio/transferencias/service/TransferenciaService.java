@@ -42,7 +42,7 @@ public class TransferenciaService {
         } else if (dias >= 41 && dias <= 50) {
             return valor * 0.017;
         } else {
-            return -1; // Nenhuma taxa aplicável
+            return -1;
         }
     }
 

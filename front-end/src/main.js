@@ -5,9 +5,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faCheckCircle, faExclamationCircle, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.css';
 
-// Adiciona os ícones à biblioteca
 library.add(faCheckCircle, faExclamationCircle, faSpinner);
 
 const app = createApp(App);
-app.component('font-awesome-icon', FontAwesomeIcon); // Registra o componente de ícone
+app.component('font-awesome-icon', FontAwesomeIcon);
 app.mount('#app');

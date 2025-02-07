@@ -20,7 +20,7 @@ export default {
 
     const atualizarLista = () => {
       if (lista.value) {
-        lista.value.carregarTransferencias(); // Chama a função para atualizar a lista
+        lista.value.carregarTransferencias();
       }
     };
 
