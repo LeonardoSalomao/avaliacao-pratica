@@ -1,6 +1,6 @@
 # Sistema de Agendamento de Transferências Financeiras
 
-Este projeto foi desenvolvido como parte de um desafio técnico para a empresa **Tokio Marine**. O sistema permite agendar transferências financeiras, calcular taxas com base em regras específicas e visualizar um extrato de todas as transferências agendadas.
+Este projeto foi desenvolvido como parte de um desafio técnico. O sistema permite agendar transferências financeiras, calcular taxas com base em regras específicas e visualizar um extrato de todas as transferências agendadas.
 
 ---
 
